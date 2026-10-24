@@ -1,0 +1,87 @@
+# Entity: status
+
+main: kit: entity: status: {
+
+  alias: field: {}
+
+  fields: {
+    cache_fixtures: {
+      h: "Cache Fixtures"
+      n: "cache_fixtures"
+      r: false
+      t: "`$INTEGER`"
+    }
+    cache_quotes: {
+      h: "Cache Quotes"
+      n: "cache_quotes"
+      r: false
+      t: "`$INTEGER`"
+    }
+    catalog_fixtures: {
+      h: "Catalog Fixtures"
+      n: "catalog_fixtures"
+      r: false
+      t: "`$INTEGER`"
+    }
+    last_change_unix: {
+      h: "Last Change Unix"
+      n: "last_change_unix"
+      r: false
+      t: "`$INTEGER`"
+    }
+    last_fixture_seen_by_sport: {
+      h: "Last Fixture Seen By Sport"
+      n: "last_fixture_seen_by_sport"
+      r: false
+      sh: "Per sport, the most recent time a fixture for that sport was seen in a catalog sweep."
+      t: "`$OBJECT`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      t: "`$STRING`"
+    }
+    warming: {
+      h: "Warming"
+      n: "warming"
+      r: false
+      sh: "True right after a restart while the board loads."
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "status"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /health"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/health"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "health"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

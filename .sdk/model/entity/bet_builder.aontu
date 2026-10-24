@@ -1,0 +1,68 @@
+# Entity: bet_builder
+
+main: kit: entity: bet_builder: {
+
+  alias: field: {}
+
+  fields: {
+    results: {
+      h: "Results"
+      n: "results"
+      r: true
+      t: "`$ARRAY`"
+    }
+    server_time: {
+      fo: "date-time"
+      h: "Server Time"
+      n: "server_time"
+      r: true
+      t: "`$STRING`"
+    }
+    slips: {
+      h: "Slips"
+      n: "slips"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "bet_builder"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "slips"
+          ]
+          co: {
+            id: "POST /betbuilder/price"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/betbuilder/price"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "betbuilder"
+            }
+            {
+              lit: "price"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

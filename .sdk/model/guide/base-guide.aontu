@@ -1,0 +1,51 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 3
+  metrics: count: path: 9
+  metrics: count: method: 9
+
+  entity: bet_builder: {
+    path: "/betbuilder/price": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: odd: {
+    path: "/catalog": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.fixtures`")|top
+    }
+    path: "/closing": {
+      op: list: method: *GET
+    }
+    path: "/history": {
+      op: list: method: *GET
+    }
+    path: "/odds": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
+    }
+    path: "/outrights": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.events`")|top
+    }
+    path: "/results": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.results`")|top
+    }
+    path: "/snapshot": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: status: {
+    path: "/health": {
+      op: load: method: *GET
+    }
+  }
+
+}

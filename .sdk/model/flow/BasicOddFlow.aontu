@@ -1,0 +1,40 @@
+# BasicOddFlow
+
+main: kit: flow: BasicOddFlow:
+{
+  entity: "odd",
+  kind: "basic",
+  name: "BasicOddFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "odd_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "odd_ref01",
+        srcdatavar: "odd_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-odd_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOddFlow"
+}

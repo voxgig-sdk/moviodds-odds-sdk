@@ -1,0 +1,35 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "MoviOdds on Discord"
+        url: "https://discord.gg/aXNfRCjtNq"
+      }
+      description: `MoviOdds serves exclusively bet365 odds for soccer, tennis, basketball, American football, ice hockey, baseball, rugby union and league, cricket and Australian rules (more sports being added): every market bet365 prices for a match, pre-match and in-play. Soccer is the default; pass sport=<key> (see the sport parameter), or sport=all, to /odds and /catalog for other sports. Load the board with GET /odds, then keep it current over the WebSocket at wss://moviodds.com/ws (send {"op":"subscribe"}, optionally with "fixtures" and "groups" lists; you receive a snapshot per match, then delta messages as prices change, and a remove message when a market closes or a match leaves the board). WebSockets are not describable in OpenAPI, so the stream is documented at https://moviodds.com/doc.
+
+The odds feed needs no key. Only POST /betbuilder/price needs an API key (X-API-Key).
+
+MoviOdds is an independent project and is not affiliated with or endorsed by bet365.`
+      security: {
+        in: "header"
+        name: "X-API-Key"
+        prefix: ""
+        scheme: "ApiKey"
+        type: "apiKey"
+      }
+      servers: [
+        {
+          url: "https://moviodds.com"
+        }
+      ]
+      summary: "Free real-time bet365 odds for soccer, tennis, basketball, American football, ice hockey, baseball, rugby, cricket and Australian rules: every market, pre-match and in-play."
+      title: "MoviOdds bet365 Odds API"
+      version: "2026.10"
+      website: "https://moviodds.com/doc"
+    }
+  }
+}
+

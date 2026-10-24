@@ -1,0 +1,18 @@
+# BasicBetBuilderFlow
+
+main: kit: flow: BasicBetBuilderFlow:
+{
+  entity: "bet_builder",
+  kind: "basic",
+  name: "BasicBetBuilderFlow",
+  step: [
+    {
+      i: {
+        ref: "bet_builder_ref01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicBetBuilderFlow"
+}

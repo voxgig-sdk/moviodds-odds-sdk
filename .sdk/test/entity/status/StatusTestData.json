@@ -1,0 +1,56 @@
+{
+  "existing": {
+    "status": {
+      "STATUS00": {
+        "cache_fixtures": 70,
+        "cache_quotes": 71,
+        "catalog_fixtures": 72,
+        "last_change_unix": 73,
+        "last_fixture_seen_by_sport": {},
+        "status": "s4b",
+        "warming": true,
+        "id": "STATUS00"
+      },
+      "STATUS01": {
+        "cache_fixtures": 140,
+        "cache_quotes": 141,
+        "catalog_fixtures": 142,
+        "last_change_unix": 143,
+        "last_fixture_seen_by_sport": {},
+        "status": "s91",
+        "warming": true,
+        "id": "STATUS01"
+      },
+      "STATUS02": {
+        "cache_fixtures": 210,
+        "cache_quotes": 211,
+        "catalog_fixtures": 212,
+        "last_change_unix": 213,
+        "last_fixture_seen_by_sport": {},
+        "status": "sd7",
+        "warming": true,
+        "id": "STATUS02"
+      }
+    }
+  },
+  "new": {
+    "status": {
+      "status_ref01": {
+        "cache_fixtures": 280,
+        "cache_quotes": 281,
+        "catalog_fixtures": 282,
+        "last_change_unix": 283,
+        "last_fixture_seen_by_sport": {},
+        "status": "s11d",
+        "warming": true
+      }
+    }
+  },
+  "requests": {
+    "GET /health": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

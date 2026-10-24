@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "bet_builder": {
+      "BET_BUILDER00": {
+        "results": [],
+        "server_time": "s1f",
+        "slips": [],
+        "id": "BET_BUILDER00"
+      },
+      "BET_BUILDER01": {
+        "results": [],
+        "server_time": "s3d",
+        "slips": [],
+        "id": "BET_BUILDER01"
+      },
+      "BET_BUILDER02": {
+        "results": [],
+        "server_time": "s5b",
+        "slips": [],
+        "id": "BET_BUILDER02"
+      }
+    }
+  },
+  "new": {
+    "bet_builder": {
+      "bet_builder_ref01": {
+        "results": [],
+        "server_time": "s79",
+        "slips": []
+      }
+    }
+  },
+  "requests": {
+    "POST /betbuilder/price": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

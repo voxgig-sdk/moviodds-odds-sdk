@@ -1,0 +1,29 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "> MoviOdds serves exclusively bet365 odds for soccer, tennis, basketball, American football, ice hockey, baseball, rugby union and league, cricket and Australian rules (more sports being added): every market bet365 prices for a match, pre-match and in-play. Soccer is the default; pass sport=&lt;key&gt; (see the sport parameter), or sport=all, to /odds and /catalog for other sports. Load the board with GET /odds, then keep it current over the WebSocket at wss://moviodds.com/ws (send &#123;&quot;op&quot;:&quot;subscribe&quot;&#125;, optionally with &quot;fixtures&quot; and &quot;groups&quot; lists; you receive a snapshot per match, then delta messages as prices change, and a remove message when a market closes or a match leaves the board). WebSockets are not describable in OpenAPI, so the stream is documented at https://moviodds.com/doc.\n>\n> The odds feed needs no key. Only POST /betbuilder/price needs an API key (X-API-Key).\n>\n> MoviOdds is an independent project and is not affiliated with or endorsed by bet365.",
+      "Event name, for example &#39;Bahrain Grand Prix&#39;, &#39;NFL 2026/27&#39;, &#39;AFL 2027&#39;, &#39;World Cup 2027&#39;.",
+      "Every current quote for the match",
+      "Number of quotes.",
+      "One result per slip, in request order",
+      "Only for /betbuilder/price. Ask @Movisu on Discord.",
+      "Per sport, the most recent time a fixture for that sport was seen in a catalog sweep. A recent timestamp means the sport is being read (a quiet off-week); a stale or missing one suggests a broken sport.",
+      "Status and cache size",
+      "The board (or the filtered slice).",
+      "The closing line per selection.",
+      "The finished matches for the sport, newest first.",
+      "The last scoreline seen (aggregate home-away; a comma-separated set list for set sports; for cricket bet365&#39;s Australian wickets/runs per innings in batting order, for example 7/199,8/141). For table tennis, badminton and volleyball the deciding set is included even though bet365 delists the match before adding it to its completed-set field.",
+      "The match list.",
+      "The outright events for the sport, each with its markets and current prices. A valid sport with no futures (a covered sport still warming, or a real sport the feature does not cover) returns an empty events list. When the whole feature is off: &#123;&quot;enabled&quot;: false&#125;.",
+      "The price timeline (oldest first).",
+      "True right after a restart while the board loads.",
+      "bet365 class id (F1 10, golf 7, cycling 38, American football 12, baseball 16, ice hockey 17, basketball 18, rugby union 8, rugby league 19, Australian rules 36).",
+      "bet365 event id (the drilled body&#39;s EV FI)."
+    ]
+  }
+}

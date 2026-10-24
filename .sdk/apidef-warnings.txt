@@ -1,0 +1,25 @@
+{
+  point: "warning"
+  note: "Points GET /closing and GET /history on entity=odd op=list have the same selector (exist: fi), so only GET /closing is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "odd"
+  op: "list"
+  points: [
+    "GET /closing"
+    "GET /history"
+  ]
+
+}
+
+
+{
+  point: "warning"
+  note: "Points GET /catalog, GET /odds and GET /outrights on entity=odd op=list have the same selector (exist: none), so only GET /catalog is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "odd"
+  op: "list"
+  points: [
+    "GET /catalog"
+    "GET /odds"
+    "GET /outrights"
+  ]
+
+}
